@@ -5,12 +5,14 @@ export class LoginPage {
   readonly passwordInput: Locator;
   readonly loginButton: Locator;
   readonly errorMessage: Locator;
+  readonly errorCloseButton: Locator;
 
   constructor(private readonly page: Page) {
     this.usernameInput = page.getByPlaceholder('Username');
     this.passwordInput = page.getByPlaceholder('Password');
     this.loginButton = page.getByRole('button', { name: 'Login' });
     this.errorMessage = page.getByTestId('error');
+    this,this.errorCloseButton=page.getByTestId('error-button');
   }
 
   async goto(): Promise<void> {
@@ -21,5 +23,5 @@ export class LoginPage {
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
     await this.loginButton.click();
-  }
+  }   
 }

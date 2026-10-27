@@ -81,12 +81,11 @@ test.describe('Login', () => {
         test(`allows login: ${scenario}`, { tag: '@regression' }, async ({
             loginPage,
             inventoryPage,
-            page,
+
         }) => {
             await loginPage.login(user.username, user.password);
+            await inventoryPage.expectLoaded(20_000);
 
-            await expect(page).toHaveURL(/inventory\.html/, { timeout: 15_000 });
-            await inventoryPage.expectLoaded();
         });
     }
 

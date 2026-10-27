@@ -30,9 +30,9 @@ export class InventoryPage {
     }
 
     /** Waits until the inventory page is showing. */
-    async expectLoaded(): Promise<void> {
-        await expect(this.page).toHaveURL(/inventory\.html/);
-        await expect(this.title).toHaveText('Products');
+    async expectLoaded(timeout = 5_000): Promise<void> {
+        await expect(this.page).toHaveURL(/inventory\.html/, { timeout });
+        await expect(this.title).toHaveText('Products', { timeout });
     }
 
     /** The "Add to cart" / "Remove" button inside one product card. */
@@ -75,6 +75,7 @@ export class InventoryPage {
 
     async openCart(): Promise<void> {
         await this.cartLink.click();
+        await expect(this.title).toHaveText('Your Cart');
     }
 
     async logout(): Promise<void> {

@@ -75,6 +75,7 @@ export class InventoryPage {
 
     async openCart(): Promise<void> {
         await this.cartLink.click();
+        await expect(this.title).toHaveText('Your Cart');
     }
 
     async logout(): Promise<void> {

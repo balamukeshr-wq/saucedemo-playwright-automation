@@ -16,13 +16,13 @@ Automated UI tests for the SauceDemo e-commerce site using Playwright and TypeSc
 
 | Area | Test count | Key scenarios |
 | --- | ---: | --- |
-| Login | 8 | valid login, invalid credentials, missing fields, logout, blocked direct access |
+| Login | 12 | valid login, invalid credentials, missing fields, logout, blocked direct access |
 | Inventory | 6 | six-product catalog, sorting A-Z/Z-A and price order, add/remove actions |
 | Cart | 3 | display selected products, remove single item, continue shopping |
-| Checkout | 5 | happy path purchase, required field validation, total/tax calculation, cancel flow |
-| Smoke | 4 | login lands on the inventory page |
+| Checkout | 6 | happy path purchase, required field validation, total/tax calculation, cancel flow |
+| Smoke | 1 | login lands on the inventory page |
 
-Total: Total: 28 tests, executed across 3 browsers = 84 browser runs. 4 of them are tagged `@smoke` (`npm run test:smoke`).
+Total: 28 tests, executed across 3 browsers = 84 browser runs. 4 of them are tagged `@smoke` (`npm run test:smoke`).
 
 ## Run commands
 
